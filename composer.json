@@ -1,0 +1,12 @@
+{
+    "name": "kwn/php-rdkafka-stubs",
+    "description": "Rdkafka extenstion stubs for your IDE",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karol Wnuk",
+            "email": "k.wnuk@op.pl"
+        }
+    ],
+    "require": {}
+}
