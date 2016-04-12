@@ -1,12 +1,32 @@
 <?php
+
 namespace RdKafka;
 
-final class TopicConf extends Conf
+class TopicConf
 {
     /**
-     * Allowed values are RD_KAFKA_MSG_PARTITIONER_RANDOM, RD_KAFKA_MSG_PARTITIONER_CONSISTENT.
-     * Set partitioner callback
-     * @param int $partitioner
+     * @return array
      */
-    public function setPartitioner($partitioner) {}
+    public function dump()
+    {
+    }
+
+    /**
+     * @param string $name
+     * @param string $value
+     *
+     * @return void
+     */
+    public function set($name, $value)
+    {
+    }
+
+    /**
+     * @param int $partitioner
+     *
+     * @return void
+     */
+    public function setPartitioner($partitioner)
+    {
+    }
 }
