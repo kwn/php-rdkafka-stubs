@@ -1,6 +1,6 @@
 {
     "name": "kwn/php-rdkafka-stubs",
-    "description": "Rdkafka extenstion stubs for your IDE",
+    "description": "Rdkafka extension stubs for your IDE",
     "license": "MIT",
     "authors": [
         {
@@ -8,7 +8,9 @@
             "email": "k.wnuk@ascetic.pl"
         }
     ],
-    "require": {},
+    "require": {
+        "ext-rdkafka": "^0.9.1"
+    },
     "require-dev": {
         "phpunit/phpunit": "^5.3"
     }

@@ -2,13 +2,6 @@
 
 class FunctionsTest extends \PHPUnit_Framework_TestCase
 {
-    public function setUp()
-    {
-        if (!extension_loaded('rdkafka')) {
-            throw new \PHPUnit_Runner_Exception('Please install or enable rdkafka extension');
-        }
-    }
-
     public function testErr2Str()
     {
         $this->assertTrue(function_exists('rd_kafka_err2str'));
