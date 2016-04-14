@@ -2,7 +2,7 @@
 
 namespace RdKafka;
 
-class ProducerTopic extends \RdKafka\Topic
+class ProducerTopic extends Topic
 {
     /**
      * @param int    $partition

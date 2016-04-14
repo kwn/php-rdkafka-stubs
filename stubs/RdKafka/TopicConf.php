@@ -2,6 +2,9 @@
 
 namespace RdKafka;
 
+/**
+ * Configuration reference: https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
+ */
 class TopicConf
 {
     /**

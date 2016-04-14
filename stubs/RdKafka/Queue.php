@@ -7,7 +7,9 @@ class Queue
     /**
      * @param string $timeout_ms
      *
-     * @return \RdKafka\Message
+     * @return Message
      */
-    public function consume($timeout_ms) {}
+    public function consume($timeout_ms)
+    {
+    }
 }

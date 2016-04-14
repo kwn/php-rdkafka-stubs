@@ -2,26 +2,26 @@
 
 namespace RdKafka;
 
-class ConsumerTopic extends \RdKafka\Topic
+class ConsumerTopic extends Topic
 {
     /**
      * @param int $partition
-     * @param int $timeoutMs
+     * @param int $timeout_ms
      *
-     * @return \RdKafka\Message
+     * @return Message
      */
-    public function consume($partition, $timeoutMs)
+    public function consume($partition, $timeout_ms)
     {
     }
 
     /**
-     * @param int            $partition
-     * @param int            $offset
-     * @param \RdKafka\Queue $queue
+     * @param int   $partition
+     * @param int   $offset
+     * @param Queue $queue
      *
      * @return void
      */
-    public function consumeQueueStart($partition, $offset, \RdKafka\Queue $queue)
+    public function consumeQueueStart($partition, $offset, Queue $queue)
     {
     }
 
