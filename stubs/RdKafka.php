@@ -1,5 +1,6 @@
 <?php
 
+use RdKafka\Exception;
 use RdKafka\Metadata;
 use RdKafka\Topic;
 use RdKafka\TopicConf;
@@ -21,6 +22,7 @@ abstract class RdKafka
      * @param Topic $only_topic
      * @param int   $timeout_ms
      *
+     * @throws Exception
      * @return Metadata
      */
     public function getMetadata($all_topics, $only_topic = null, $timeout_ms)
