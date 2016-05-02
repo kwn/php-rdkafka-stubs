@@ -2,7 +2,7 @@
 
 namespace RdKafka;
 
-class Topic
+abstract class Topic
 {
     /**
      * @return string
