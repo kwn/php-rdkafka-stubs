@@ -4,6 +4,10 @@ namespace RdKafka;
 
 class Queue
 {
+    private function __construct()
+    {
+    }
+
     /**
      * @param string $timeout_ms
      *

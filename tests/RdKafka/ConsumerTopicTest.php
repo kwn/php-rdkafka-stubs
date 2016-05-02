@@ -43,7 +43,5 @@ class ConsumerTopicTest extends \PHPUnit_Framework_TestCase
         $this->consumerTopic->consumeStop(self::PARTITION);
 
         $this->assertInstanceOf(Message::class, $message);
-
-
     }
 }

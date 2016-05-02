@@ -1,15 +1,17 @@
 <?php
 
+namespace RdKafka;
+
 class ConfTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \RdKafka\Conf
+     * @var Conf
      */
     private $conf;
 
     public function setUp()
     {
-        $this->conf = new \RdKafka\Conf();
+        $this->conf = new Conf();
     }
 
     /**
@@ -38,7 +40,6 @@ class ConfTest extends \PHPUnit_Framework_TestCase
             'log_level',
             'socket_cb',
             'open_cb',
-            'opaque',
             'internal.termination.signal',
             'queued.min.messages',
             'queued.max.messages.kbytes',
@@ -57,7 +58,7 @@ class ConfTest extends \PHPUnit_Framework_TestCase
 
         $dumpedKeys = array_keys($this->conf->dump());
 
-        $this->assertEquals(array_values($expectedKeys), array_values($dumpedKeys));
+        $this->assertEquals($expectedKeys, $dumpedKeys);
     }
 
     public function testSet()
