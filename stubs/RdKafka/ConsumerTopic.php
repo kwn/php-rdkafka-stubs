@@ -4,6 +4,10 @@ namespace RdKafka;
 
 class ConsumerTopic extends Topic
 {
+    private function __construct()
+    {
+    }
+
     /**
      * @param int $partition
      * @param int $timeout_ms
