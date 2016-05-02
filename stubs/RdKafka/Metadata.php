@@ -14,6 +14,13 @@ class Metadata
     }
 
     /**
+     * @return Collection
+     */
+    public function getTopics()
+    {
+    }
+
+    /**
      * @return int
      */
     public function getOrigBrokerId()
@@ -24,13 +31,6 @@ class Metadata
      * @return string
      */
     public function getOrigBrokerName()
-    {
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getTopics()
     {
     }
 }
