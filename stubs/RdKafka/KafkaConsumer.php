@@ -5,6 +5,13 @@ namespace RdKafka;
 class KafkaConsumer
 {
     /**
+     * @param Conf $conf
+     */
+    public function __construct(Conf $conf)
+    {
+    }
+
+    /**
      * @param array $topic_partitions
      *
      * @throws Exception
