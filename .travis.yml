@@ -1,15 +1,31 @@
 language: php
 
+sudo: required
+dist: trusty
+
 php:
-  - 5.3
   - 5.4
   - 5.5
   - 5.6
 
+before_install:
+  - wget http://launchpadlibrarian.net/234454186/librdkafka1_0.8.6-1.1_amd64.deb
+  - wget http://launchpadlibrarian.net/234454185/librdkafka-dev_0.8.6-1.1_amd64.deb
+  - wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb
+  - wget http://mirrors.gigenet.com/apache/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
+  - sudo dpkg -i librdkafka1_0.8.6-1.1_amd64.deb
+  - sudo dpkg -i librdkafka-dev_0.8.6-1.1_amd64.deb
+  - sudo dpkg -i scala-2.11.8.deb
+  - sudo apt-get -y install zookeeperd
+  - tar zxf kafka_2.11-0.9.0.1.tgz
+
 install:
+  - pecl install rdkafka-0.9.1
   - composer self-update
   - composer install
-  - pecl install rdkafka-0.9.1
+
+before_script:
+  - nohup kafka_2.11-0.9.0.1/bin/kafka-server-start.sh kafka_2.11-0.9.0.1/config/server.properties > kafka_2.11-0.9.0.1/kafka.log 2>&1 &
 
 script:
   - make build
