@@ -1,5 +1,7 @@
 # Stubs for PHP Rdkafka extension (0.9.1 version)
 
+[![Latest Stable Version](https://poser.pugx.org/kwn/php-rdkafka-stubs/v/stable)](https://packagist.org/packages/kwn/php-rdkafka-stubs)
+
 This package provides you a set of stubs for [RdKafka extension](https://github.com/arnaud-lb/php-rdkafka). 
 It supports version 0.9.1 with some recent changes (some methods in `RdKafka` class were deprecated e.g. `metadata()`, and 
 replaced with getter convention e.g. `getMetadata()`).
@@ -11,7 +13,7 @@ Add package to your composer.json
 ```json
 {
     "require": {
-        "kwn/php-rdkafka-stubs": "^1.0"
+        "kwn/php-rdkafka-stubs": "^0.0.3"
     }
 }
 ```

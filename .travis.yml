@@ -1,14 +1,15 @@
 language: php
 
 php:
+  - 5.3
   - 5.4
   - 5.5
   - 5.6
-  - 7.0
 
 install:
   - composer self-update
   - composer install
+  - pecl install rdkafka-0.9.1
 
 script:
   - make build
