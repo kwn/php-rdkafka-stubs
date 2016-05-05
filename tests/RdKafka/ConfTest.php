@@ -58,7 +58,7 @@ class ConfTest extends \PHPUnit_Framework_TestCase
 
         $dumpedKeys = array_keys($this->conf->dump());
 
-        $this->assertEquals($expectedKeys, $dumpedKeys);
+        $this->assertArraySubset($expectedKeys, $dumpedKeys);
     }
 
     public function testSet()

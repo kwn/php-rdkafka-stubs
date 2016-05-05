@@ -36,6 +36,13 @@ class ConsumerTopicTest extends \PHPUnit_Framework_TestCase
 
     public function testConsume()
     {
+        $producer = new Producer();
+        $producer->addBrokers('localhost:9092');
+
+        /** @var ProducerTopic $producerTopic */
+        $producerTopic = $producer->newTopic('test');
+        $producerTopic->produce(self::PARTITION, 0, 'test message');
+
         $this->consumerTopic->consumeStart(self::PARTITION, RD_KAFKA_OFFSET_BEGINNING);
 
         $message = $this->consumerTopic->consume(self::PARTITION, 1000);

@@ -45,6 +45,6 @@ class MessageTest extends \PHPUnit_Framework_TestCase
 
     public function testErrstr()
     {
-        $this->assertEquals('test message 2', $this->message->errstr());
+        $this->assertInternalType('string', $this->message->errstr());
     }
 }
