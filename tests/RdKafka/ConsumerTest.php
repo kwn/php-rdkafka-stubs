@@ -24,14 +24,22 @@ class ConsumerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetMetadata()
     {
-        $metadata = $this->consumer->getMetadata(true, null, 60e3);
+        if (method_exists($this->consumer, 'getMetadata')) {
+            $metadata = $this->consumer->getMetadata(true, null, 60e3);
+        } else {
+            $metadata = $this->consumer->metadata(true, null, 60e3);
+        }
 
         $this->assertInstanceOf(Metadata::class, $metadata);
     }
 
     public function testGetOutQLen()
     {
-        $outQLen = $this->consumer->getOutQLen();
+        if (method_exists($this->consumer, 'getOutQLen')) {
+            $outQLen = $this->consumer->getOutQLen();
+        } else {
+            $outQLen = $this->consumer->outQLen();
+        }
 
         $this->assertEquals(0, $outQLen);
     }

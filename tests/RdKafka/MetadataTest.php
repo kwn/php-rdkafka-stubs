@@ -16,7 +16,11 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
         $producer = new Producer();
         $producer->addBrokers('localhost:9092');
 
-        $this->metadata = $producer->getMetadata(true, null, 1000);
+        if (method_exists($producer, 'getMetadata')) {
+            $this->metadata = $producer->getMetadata(true, null, 1000);
+        } else {
+            $this->metadata = $producer->metadata(true, null, 1000);
+        }
     }
 
     public function testGetBrokers()
