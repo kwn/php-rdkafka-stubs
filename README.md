@@ -1,5 +1,6 @@
 # Stubs for PHP Rdkafka extension (0.9.1 version)
 
+[![Build Status](https://travis-ci.org/kwn/php-rdkafka-stubs.svg?branch=master)](https://travis-ci.org/kwn/php-rdkafka-stubs)
 [![Latest Stable Version](https://poser.pugx.org/kwn/php-rdkafka-stubs/v/stable)](https://packagist.org/packages/kwn/php-rdkafka-stubs)
 
 This package provides you a set of stubs for [RdKafka extension](https://github.com/arnaud-lb/php-rdkafka). 
