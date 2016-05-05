@@ -40,7 +40,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(self::PARTITION, $this->message->partition);
         $this->assertEquals('test message 2', $this->message->payload);
         $this->assertEquals('key_2', $this->message->key);
-        $this->assertGreaterThan(0, $this->message->offset);
+        $this->assertGreaterThanOrEqual(0, $this->message->offset);
     }
 
     public function testErrstr()

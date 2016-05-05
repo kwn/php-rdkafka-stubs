@@ -24,14 +24,22 @@ class ProducerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetMetadata()
     {
-        $metadata = $this->producer->getMetadata(true, null, 60e3);
+        if (method_exists($this->producer, 'getMetadata')) {
+            $metadata = $this->producer->getMetadata(true, null, 60e3);
+        } else {
+            $metadata = $this->producer->metadata(true, null, 60e3);
+        }
 
         $this->assertInstanceOf(Metadata::class, $metadata);
     }
 
     public function testGetOutQLen()
     {
-        $outQLen = $this->producer->getOutQLen();
+        if (method_exists($this->producer, 'getOutQLen')) {
+            $outQLen = $this->producer->getOutQLen();
+        } else {
+            $outQLen = $this->producer->outQLen();
+        }
 
         $this->assertEquals(0, $outQLen);
     }

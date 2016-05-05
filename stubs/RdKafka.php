@@ -30,9 +30,32 @@ abstract class RdKafka
     }
 
     /**
+     * @param bool  $all_topics
+     * @param Topic $only_topic
+     * @param int   $timeout_ms
+     *
+     * @throws Exception
+     * @return Metadata
+     *
+     * @deprecated Please use getMetadata() instead
+     */
+    public function metadata($all_topics, $only_topic = null, $timeout_ms)
+    {
+    }
+
+    /**
      * @return int
      */
     public function getOutQLen()
+    {
+    }
+
+    /**
+     * @return int
+     *
+     * @deprecated Please use getOutQLen() instead
+     */
+    public function outQLen()
     {
     }
 
