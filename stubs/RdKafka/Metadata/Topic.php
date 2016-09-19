@@ -5,7 +5,7 @@ namespace RdKafka\Metadata;
 class Topic
 {
     /**
-     * @return \RdKafka\Topic
+     * @return string
      */
     public function getTopic()
     {
