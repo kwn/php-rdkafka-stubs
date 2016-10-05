@@ -13,7 +13,7 @@ Add package to your composer.json
 
 ```json
 {
-    "require": {
+    "require-dev": {
         "kwn/php-rdkafka-stubs": "^0.0.4"
     }
 }
