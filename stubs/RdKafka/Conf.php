@@ -38,6 +38,15 @@ class Conf
      *
      * @return void
      */
+    public function setDrMsgCb(callable $callback)
+    {
+    }
+
+    /**
+     * @param callable $callback
+     *
+     * @return void
+     */
     public function setErrorCb(callable $callback)
     {
     }
