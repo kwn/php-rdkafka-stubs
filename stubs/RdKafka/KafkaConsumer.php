@@ -12,7 +12,7 @@ class KafkaConsumer
     }
 
     /**
-     * @param array $topic_partitions
+     * @param TopicPartition[] $topic_partitions
      *
      * @throws Exception
      * @return void
@@ -22,7 +22,7 @@ class KafkaConsumer
     }
 
     /**
-     * @param mixed $message_or_offsets
+     * @param null|Message|TopicPartition[] $message_or_offsets
      *
      * @throws Exception
      * @return void
@@ -54,7 +54,7 @@ class KafkaConsumer
 
     /**
      * @throws Exception
-     * @return array
+     * @return TopicPartition[]
      */
     public function getAssignment()
     {
