@@ -26,28 +26,28 @@ class MessageTest extends \PHPUnit_Framework_TestCase
 
         /** @var ConsumerTopic $consumerTopic */
         $consumerTopic = $consumer->newTopic('test');
-        $consumerTopic->consumeStart(self::PARTITION, self::OFFSET);
+        $consumerTopic->consumeStart(self::PARTITION, RD_KAFKA_OFFSET_BEGINNING);
 
         $this->message = $consumerTopic->consume(self::PARTITION, 1000);
 
-        $consumerTopic->consumeStop(self::PARTITION);
+        //$consumerTopic->consumeStop(self::PARTITION);
     }
 
     public function testMessageProperties()
     {
-        $this->markTestSkipped('Fails on CI');
+        //$this->markTestSkipped('Fails on CI');
 
         $this->assertEquals(0, $this->message->err);
         $this->assertEquals('test', $this->message->topic_name);
         $this->assertEquals(self::PARTITION, $this->message->partition);
         $this->assertEquals('test message 2', $this->message->payload);
         $this->assertEquals('key_2', $this->message->key);
-        $this->assertGreaterThan(0, $this->message->offset);
+        $this->assertGreaterThanOrEqual(0, $this->message->offset);
     }
 
     public function testErrstr()
     {
-        $this->markTestSkipped('Fails on CI');
+        //$this->markTestSkipped('Fails on CI');
 
         $this->assertEquals('test message 2', $this->message->errstr());
     }

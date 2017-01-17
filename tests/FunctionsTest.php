@@ -9,7 +9,7 @@ class FunctionsTest extends \PHPUnit_Framework_TestCase
 
     public function testErrno2Err()
     {
-        $this->assertTrue(function_exists('rd_kafka_err2str'));
+        $this->assertTrue(function_exists('rd_kafka_errno2err'));
     }
 
     public function testErrno()

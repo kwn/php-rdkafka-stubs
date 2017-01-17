@@ -47,5 +47,10 @@ class ConstantsTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(defined('RD_KAFKA_CONF_UNKNOWN'));
         $this->assertTrue(defined('RD_KAFKA_CONF_INVALID'));
         $this->assertTrue(defined('RD_KAFKA_CONF_OK'));
+        $this->assertTrue(defined('RD_KAFKA_MSG_PARTITIONER_RANDOM'));
+        $this->assertTrue(defined('RD_KAFKA_MSG_PARTITIONER_CONSISTENT'));
+        $this->assertTrue(defined('RD_KAFKA_LOG_PRINT'));
+        $this->assertTrue(defined('RD_KAFKA_LOG_SYSLOG'));
+        $this->assertTrue(defined('RD_KAFKA_LOG_SYSLOG_PRINT'));
     }
 }
