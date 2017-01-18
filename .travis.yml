@@ -7,12 +7,14 @@ php:
   - 5.5
 
 before_install:
+  - wget http://ftp.uk.debian.org/debian/pool/main/g/gcc-6/gcc-6-base_6.2.1-5_amd64.deb
   - wget http://ftp.uk.debian.org/debian/pool/main/g/gcc-6/libstdc++6_6.2.1-5_amd64.deb
   - wget https://launchpad.net/ubuntu/+archive/primary/+files/librdkafka1_0.9.1-1_amd64.deb
   - wget https://launchpad.net/ubuntu/+archive/primary/+files/librdkafka++1_0.9.1-1_amd64.deb
   - wget https://launchpad.net/ubuntu/+archive/primary/+files/librdkafka-dev_0.9.1-1_amd64.deb
   - wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb
   - wget http://mirrors.gigenet.com/apache/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
+  - sudo dpkg -i gcc-6-base_6.2.1-5_amd64.deb
   - sudo dpkg -i libstdc++6_6.2.1-5_amd64.deb
   - sudo dpkg -i librdkafka1_0.9.1-1_amd64.deb
   - sudo dpkg -i librdkafka++1_0.9.1-1_amd64.deb
