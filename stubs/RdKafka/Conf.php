@@ -59,4 +59,13 @@ class Conf
     public function setRebalanceCb(callable $callback)
     {
     }
+
+    /**
+     * @param callable $callback
+     *
+     * @return void
+     */
+    public function setStatsCb(callable $callback)
+    {
+    }
 }
