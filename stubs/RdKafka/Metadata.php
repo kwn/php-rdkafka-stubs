@@ -2,13 +2,14 @@
 
 namespace RdKafka;
 
+use RdKafka\Metadata\Broker;
 use RdKafka\Metadata\Collection;
 use RdKafka\Metadata\Topic;
 
 class Metadata
 {
     /**
-     * @return Collection
+     * @return Collection|Broker[]
      */
     public function getBrokers()
     {
