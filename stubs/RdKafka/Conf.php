@@ -68,4 +68,22 @@ class Conf
     public function setStatsCb(callable $callback)
     {
     }
+
+    /**
+     * @param callable $callback
+     *
+     * @return void
+     */
+    public function setConsumeCb(callable $callback)
+    {
+    }
+
+    /**
+     * @param callable $callback
+     *
+     * @return void
+     */
+    public function setOffsetCommitCb(callable $callback)
+    {
+    }
 }

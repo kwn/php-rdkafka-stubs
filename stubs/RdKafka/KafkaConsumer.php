@@ -96,4 +96,12 @@ class KafkaConsumer
     public function unsubscribe()
     {
     }
+
+    /**
+     * @param array $topics
+     * @param int   $timeout Timeout in milliseconds
+     */
+    public function getCommittedOffsets($topics, $timeout)
+    {
+    }
 }
