@@ -1,9 +1,9 @@
-# Stubs for PHP Rdkafka extension (3.0.0 version)
+# Stubs for PHP Rdkafka extension (3.1 version)
 
 [![Build Status](https://travis-ci.org/kwn/php-rdkafka-stubs.svg?branch=master)](https://travis-ci.org/kwn/php-rdkafka-stubs)
 [![Latest Stable Version](https://poser.pugx.org/kwn/php-rdkafka-stubs/v/stable)](https://packagist.org/packages/kwn/php-rdkafka-stubs)
 
-This package provides you a set of stubs for [RdKafka extension](https://github.com/arnaud-lb/php-rdkafka). It currently supports version 3.0.0 but it should most likely work with previous versions (>= 0.9.1).
+This package provides you a set of stubs for [RdKafka extension](https://github.com/arnaud-lb/php-rdkafka). It currently supports version 3.1 but it should most likely work with previous versions (>= 0.9.1).
 
 ## Installation
 
@@ -12,7 +12,7 @@ Add package to your composer.json
 ```json
 {
     "require-dev": {
-        "kwn/php-rdkafka-stubs": "~1.1.0"
+        "kwn/php-rdkafka-stubs": "~1.3.0"
     }
 }
 ```
@@ -20,7 +20,7 @@ Add package to your composer.json
 And update your vendors
 
 ```
-$ php composer.phar update kwn/php-rdkafka-stubs
+$ composer update kwn/php-rdkafka-stubs
 ```
 
 ## Usage
