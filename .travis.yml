@@ -1,10 +1,9 @@
 language: php
 
-sudo: required
-dist: trusty
+dist: xenial
 
 php:
-  - 5.5
+  - 7.3
 
 before_install:
   - wget http://ftp.uk.debian.org/debian/pool/main/g/gcc-6/gcc-6-base_6.2.1-5_amd64.deb
