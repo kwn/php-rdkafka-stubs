@@ -6,7 +6,7 @@ php:
   - "7.3"
 
 before_install:
-  - sudo apt-get install librdkafka
+  - sudo apt-get install librdkafka-dev
 #  - wget http://ftp.uk.debian.org/debian/pool/main/g/gcc-6/gcc-6-base_6.2.1-5_amd64.deb
 #  - wget http://ftp.uk.debian.org/debian/pool/main/g/gcc-6/libstdc++6_6.2.1-5_amd64.deb
 #  - wget https://launchpad.net/ubuntu/+archive/primary/+files/librdkafka1_0.9.1-1_amd64.deb
