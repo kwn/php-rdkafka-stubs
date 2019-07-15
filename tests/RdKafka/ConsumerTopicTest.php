@@ -2,7 +2,9 @@
 
 namespace RdKafka;
 
-class ConsumerTopicTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ConsumerTopicTest extends TestCase
 {
     const PARTITION = 0;
 
@@ -11,7 +13,7 @@ class ConsumerTopicTest extends \PHPUnit_Framework_TestCase
      */
     private $consumerTopic;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $consumer = new Consumer();
         $consumer->addBrokers('localhost:9092');

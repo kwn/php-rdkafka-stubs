@@ -2,7 +2,9 @@
 
 namespace RdKafka;
 
-class QueueTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class QueueTest extends TestCase
 {
     const PARTITION = 0;
 
@@ -16,7 +18,7 @@ class QueueTest extends \PHPUnit_Framework_TestCase
      */
     private $queue;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $consumer = new Consumer();
         $consumer->addBrokers('localhost:9092');

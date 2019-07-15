@@ -2,14 +2,16 @@
 
 namespace RdKafka;
 
-class ConfTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ConfTest extends TestCase
 {
     /**
      * @var Conf
      */
     private $conf;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->conf = new Conf();
     }
