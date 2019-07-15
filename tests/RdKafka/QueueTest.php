@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class QueueTest extends TestCase
 {
-    const PARTITION = 0;
+    private const PARTITION = 0;
 
     /**
      * @var ConsumerTopic
@@ -20,15 +20,17 @@ class QueueTest extends TestCase
 
     protected function setUp(): void
     {
-        $consumer = new Consumer();
-        $consumer->addBrokers('localhost:9092');
-
-        $this->consumerTopic = $consumer->newTopic('test');
-        $this->queue = $consumer->newQueue();
+        // $consumer = new Consumer();
+        // $consumer->addBrokers('localhost:9092');
+        //
+        // $this->consumerTopic = $consumer->newTopic('test');
+        // $this->queue = $consumer->newQueue();
     }
 
-    public function testConsumeViaQueue()
+    public function testConsumeViaQueue(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $this->markTestSkipped('Consuming via queue does not work');
 
         $this->consumerTopic->consumeQueueStart(self::PARTITION, RD_KAFKA_OFFSET_BEGINNING, $this->queue);

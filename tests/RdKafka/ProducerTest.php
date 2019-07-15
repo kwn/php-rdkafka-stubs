@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class ProducerTest extends TestCase
 {
-    const MESSAGE_PAYLOAD = 'test payload';
+    private const MESSAGE_PAYLOAD = 'test payload';
 
     /**
      * @var Producer
@@ -20,58 +20,70 @@ class ProducerTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->filename = __DIR__ . '/../../build/message.txt';
-
-        if (is_file($this->filename)) {
-            unlink($this->filename);
-        }
-
-        $configuration = new Conf();
-        $configuration->setDrMsgCb(function (\RdKafka $kafka, Message $message) {
-            file_put_contents($this->filename, $message->payload);
-        });
-
-        $this->producer = new Producer($configuration);
-        $this->producer->addBrokers('localhost:9092');
+        // $this->filename = __DIR__ . '/../../build/message.txt';
+        //
+        // if (is_file($this->filename)) {
+        //     unlink($this->filename);
+        // }
+        //
+        // $configuration = new Conf();
+        // $configuration->setDrMsgCb(function (\RdKafka $kafka, Message $message) {
+        //     file_put_contents($this->filename, $message->payload);
+        // });
+        //
+        // $this->producer = new Producer($configuration);
+        // $this->producer->addBrokers('localhost:9092');
     }
 
-    public function testAddBrokers()
+    public function testAddBrokers(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $addedBrokersNumber = $this->producer->addBrokers('localhost:9092');
 
         self::assertEquals(1, $addedBrokersNumber);
     }
 
-    public function testGetMetadata()
+    public function testGetMetadata(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $metadata = $this->producer->getMetadata(true, null, 5000);
 
         self::assertInstanceOf(Metadata::class, $metadata);
     }
 
-    public function testGetOutQLen()
+    public function testGetOutQLen(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $outQLen = $this->producer->getOutQLen();
 
         self::assertEquals(0, $outQLen);
     }
 
-    public function testNewQueue()
+    public function testNewQueue(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $queue = $this->producer->newQueue();
 
         self::assertInstanceOf(Queue::class, $queue);
     }
 
-    public function testNewTopic()
+    public function testNewTopic(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $topic = $this->producer->newTopic('test');
 
         self::assertInstanceOf(ProducerTopic::class, $topic);
     }
 
-    public function testPoll()
+    public function testPoll(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $topic = $this->producer->newTopic('test');
         $topic->produce(RD_KAFKA_PARTITION_UA, 0, self::MESSAGE_PAYLOAD);
 
@@ -80,8 +92,10 @@ class ProducerTest extends TestCase
         self::assertStringEqualsFile($this->filename, self::MESSAGE_PAYLOAD);
     }
 
-    public function testSetLogLevel()
+    public function testSetLogLevel(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $this->producer->setLogLevel(LOG_DEBUG);
 
         self::markTestIncomplete('Create real test');

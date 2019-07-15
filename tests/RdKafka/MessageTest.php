@@ -6,8 +6,8 @@ use PHPUnit\Framework\TestCase;
 
 class MessageTest extends TestCase
 {
-    const PARTITION = 0;
-    const OFFSET    = -1;
+    private const PARTITION = 0;
+    private const OFFSET = -1;
 
     /**
      * @var Message
@@ -16,26 +16,26 @@ class MessageTest extends TestCase
 
     protected function setUp(): void
     {
-        $producer = new Producer();
-        $producer->addBrokers('localhost:9092');
-
-        /** @var ProducerTopic $producerTopic */
-        $producerTopic = $producer->newTopic('test');
-        $producerTopic->produce(RD_KAFKA_PARTITION_UA, self::PARTITION, 'test message 2', 'key_2');
-
-        $consumer = new Consumer();
-        $consumer->addBrokers('localhost:9092');
-
-        /** @var ConsumerTopic $consumerTopic */
-        $consumerTopic = $consumer->newTopic('test');
-        $consumerTopic->consumeStart(self::PARTITION, RD_KAFKA_OFFSET_BEGINNING);
-
-        $this->message = $consumerTopic->consume(self::PARTITION, 1000);
+        // $producer = new Producer();
+        // $producer->addBrokers('localhost:9092');
+        //
+        // /** @var ProducerTopic $producerTopic */
+        // $producerTopic = $producer->newTopic('test');
+        // $producerTopic->produce(RD_KAFKA_PARTITION_UA, self::PARTITION, 'test message 2', 'key_2');
+        //
+        // $consumer = new Consumer();
+        // $consumer->addBrokers('localhost:9092');
+        //
+        // /** @var ConsumerTopic $consumerTopic */
+        // $consumerTopic = $consumer->newTopic('test');
+        // $consumerTopic->consumeStart(self::PARTITION, RD_KAFKA_OFFSET_BEGINNING);
+        //
+        // $this->message = $consumerTopic->consume(self::PARTITION, 1000);
 
         //$consumerTopic->consumeStop(self::PARTITION);
     }
 
-    public function testMessageProperties()
+    public function testMessageProperties(): void
     {
         $this->markTestSkipped('Fails on CI');
 
@@ -47,7 +47,7 @@ class MessageTest extends TestCase
         $this->assertGreaterThanOrEqual(0, $this->message->offset);
     }
 
-    public function testErrstr()
+    public function testErrstr(): void
     {
         $this->markTestSkipped('Fails on CI');
 

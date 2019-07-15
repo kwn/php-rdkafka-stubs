@@ -16,8 +16,10 @@ class TopicConfTest extends TestCase
         $this->topicConf = new TopicConf();
     }
 
-    public function testDump()
+    public function testDump(): void
     {
+        self::markTestSkipped('Temporarily disabled');
+
         $this->markTestSkipped('Fails on CI');
 
         $expectedKeys = [

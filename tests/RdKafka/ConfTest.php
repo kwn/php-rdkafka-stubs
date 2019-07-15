@@ -19,9 +19,9 @@ class ConfTest extends TestCase
     /**
      * dump() returns all values for parameters as strings
      */
-    public function testDump()
+    public function testDump(): void
     {
-        $this->markTestSkipped('Fails on CI');
+        self::markTestSkipped('Fails on CI');
 
         $expectedKeys = [
             'client.id',
@@ -65,7 +65,7 @@ class ConfTest extends TestCase
         $this->assertEquals($expectedKeys, $dumpedKeys);
     }
 
-    public function testSet()
+    public function testSet(): void
     {
         $this->conf->set('batch.num.messages', 666);
 

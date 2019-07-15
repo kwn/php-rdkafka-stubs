@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 class ConstantsTest extends TestCase
 {
-    public function testConstantsExist()
+    public function testConstantsExist(): void
     {
         $this->assertTrue(defined('RD_KAFKA_RESP_ERR__BEGIN'));
         $this->assertTrue(defined('RD_KAFKA_RESP_ERR__BAD_MSG'));

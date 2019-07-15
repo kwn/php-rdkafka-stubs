@@ -6,11 +6,10 @@ use PHPUnit\Framework\TestCase;
 
 class ExceptionTest extends TestCase
 {
-    /**
-     * @expectedException \RdKafka\Exception
-     */
-    public function testRdKafkaExceptionIsThrowable()
+    public function testRdKafkaExceptionIsThrowable(): void
     {
+        $this->expectException(Exception::class);
+
         throw new Exception();
     }
 }
