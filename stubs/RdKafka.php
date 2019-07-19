@@ -70,4 +70,15 @@ abstract class RdKafka
     public function setLogLevel($level)
     {
     }
+
+    /**
+     * @param string $topic
+     * @param int $partition
+     * @param int $low
+     * @param int $high
+     * @param int $timeout_ms
+     */
+    public function queryWatermarkOffsets($topic, $partition, &$low, &$high, $timeout_ms)
+    {
+    }
 }
