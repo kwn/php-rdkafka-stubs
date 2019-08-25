@@ -2,16 +2,17 @@
 
 namespace RdKafka;
 
+use PHPUnit\Framework\TestCase;
 use RdKafka\Metadata\Collection;
 
-class MetadataTest extends \PHPUnit_Framework_TestCase
+class MetadataTest extends TestCase
 {
     /**
      * @var Metadata
      */
     private $metadata;
 
-    public function setUp()
+    public function setUp(): void
     {
         $producer = new Producer();
         $producer->addBrokers('localhost:9092');

@@ -2,7 +2,9 @@
 
 namespace RdKafka;
 
-class ExceptionTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ExceptionTest extends TestCase
 {
     /**
      * @expectedException \RdKafka\Exception

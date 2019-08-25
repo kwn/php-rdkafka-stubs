@@ -2,7 +2,9 @@
 
 namespace RdKafka;
 
-class ProducerTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ProducerTest extends TestCase
 {
     const MESSAGE_PAYLOAD = 'test payload';
 
@@ -16,7 +18,7 @@ class ProducerTest extends \PHPUnit_Framework_TestCase
      */
     private $filename;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->filename = __DIR__ . '/../../build/message.txt';
 
