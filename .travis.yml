@@ -11,7 +11,7 @@ before_install:
   - cd librdkafka
   - ./configure
   - make
-  - make install
+  - sudo make install
   - wget https://www-eu.apache.org/dist/kafka/2.3.0/kafka_2.11-2.3.0.tgz
   - tar zxf kafka_2.11-2.3.0.tgz
 
