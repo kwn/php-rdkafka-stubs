@@ -6,7 +6,12 @@ php:
   - 7.3
 
 before_install:
-  - sudo apt-get -y install gcc librdkafka1 librdkafka-dev scala zookeeperd
+  - sudo apt-get -y install gcc scala zookeeperd git
+  - git clone --depth 1 --branch v1.1.0 https://github.com/edenhill/librdkafka.git
+  - cd librdkafka
+  - ./configure
+  - make
+  - make install
   - wget https://www-eu.apache.org/dist/kafka/2.3.0/kafka_2.11-2.3.0.tgz
   - tar zxf kafka_2.11-2.3.0.tgz
 
