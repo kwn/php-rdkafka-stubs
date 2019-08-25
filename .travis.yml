@@ -12,6 +12,7 @@ before_install:
   - ./configure
   - make
   - sudo make install
+  - cd ..
   - wget https://www-eu.apache.org/dist/kafka/2.3.0/kafka_2.11-2.3.0.tgz
   - tar zxf kafka_2.11-2.3.0.tgz
 
