@@ -7,8 +7,8 @@ php:
 
 before_install:
   - sudo apt-get -y install gcc librdkafka1 librdkafka-dev scala zookeeperd
-  - wget http://mirrors.gigenet.com/apache/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
-  - tar zxf kafka_2.11-0.9.0.1.tgz
+  - wget https://www-eu.apache.org/dist/kafka/2.3.0/kafka_2.11-2.3.0.tgz
+  - tar zxf kafka_2.11-2.3.0.tgz
 
 install:
   - pecl install rdkafka
@@ -16,7 +16,7 @@ install:
   - composer install
 
 before_script:
-  - nohup kafka_2.11-0.9.0.1/bin/kafka-server-start.sh kafka_2.11-0.9.0.1/config/server.properties > kafka_2.11-0.9.0.1/kafka.log 2>&1 &
+  - nohup kafka_2.11-2.3.0/bin/kafka-server-start.sh kafka_2.11-2.3.0/config/server.properties > kafka_2.11-2.3.0/kafka.log 2>&1 &
   - sleep 5
 
 script:
