@@ -23,7 +23,7 @@ install:
 
 before_script:
   - nohup kafka_2.11-2.3.0/bin/kafka-server-start.sh kafka_2.11-2.3.0/config/server.properties > kafka_2.11-2.3.0/kafka.log 2>&1 &
-  - sleep 5
+  - sleep 10
 
 script:
   - make build

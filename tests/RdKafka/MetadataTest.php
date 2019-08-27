@@ -17,6 +17,8 @@ class MetadataTest extends TestCase
         $producer = new Producer();
         $producer->addBrokers('localhost:9092');
 
+        sleep(1);
+
         if (method_exists($producer, 'getMetadata')) {
             $this->metadata = $producer->getMetadata(true, null, 1000);
         } else {
