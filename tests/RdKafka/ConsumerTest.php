@@ -2,14 +2,16 @@
 
 namespace RdKafka;
 
-class ConsumerTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ConsumerTest extends TestCase
 {
     /**
      * @var Consumer
      */
     private $consumer;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->consumer = new Consumer();
         $this->consumer->addBrokers('localhost:9092');

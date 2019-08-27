@@ -1,6 +1,8 @@
 <?php
 
-class FunctionsTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class FunctionsTest extends TestCase
 {
     public function testErr2Str()
     {

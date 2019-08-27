@@ -2,7 +2,9 @@
 
 namespace RdKafka;
 
-class TopicTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class TopicTest extends TestCase
 {
     public function testClassIsAbstract()
     {

@@ -2,16 +2,17 @@
 
 namespace RdKafka;
 
+use PHPUnit\Framework\TestCase;
 use RdKafka\Metadata\Collection;
 
-class MetadataTest extends \PHPUnit_Framework_TestCase
+class MetadataTest extends TestCase
 {
     /**
      * @var Metadata
      */
     private $metadata;
 
-    public function setUp()
+    public function setUp(): void
     {
         $producer = new Producer();
         $producer->addBrokers('localhost:9092');
@@ -35,11 +36,11 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
 
     public function testGetOrigBrokerId()
     {
-        $this->assertEquals(-1, $this->metadata->getOrigBrokerId());
+        $this->assertEquals(0, $this->metadata->getOrigBrokerId());
     }
 
     public function testGetOrigBrokerName()
     {
-        $this->assertEquals('localhost:9092/bootstrap', $this->metadata->getOrigBrokerName());
+        $this->assertEquals('localhost:9092/0', $this->metadata->getOrigBrokerName());
     }
 }

@@ -1,34 +1,28 @@
 language: php
 
-dist: xenial
+dist: bionic
 
 php:
   - 7.3
 
 before_install:
-  - wget http://ftp.uk.debian.org/debian/pool/main/g/gcc-6/gcc-6-base_6.2.1-5_amd64.deb
-  - wget http://ftp.uk.debian.org/debian/pool/main/g/gcc-6/libstdc++6_6.2.1-5_amd64.deb
-  - wget https://launchpad.net/ubuntu/+archive/primary/+files/librdkafka1_0.9.1-1_amd64.deb
-  - wget https://launchpad.net/ubuntu/+archive/primary/+files/librdkafka++1_0.9.1-1_amd64.deb
-  - wget https://launchpad.net/ubuntu/+archive/primary/+files/librdkafka-dev_0.9.1-1_amd64.deb
-  - wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb
-  - wget http://mirrors.gigenet.com/apache/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
-  - sudo dpkg -i gcc-6-base_6.2.1-5_amd64.deb
-  - sudo dpkg -i libstdc++6_6.2.1-5_amd64.deb
-  - sudo dpkg -i librdkafka1_0.9.1-1_amd64.deb
-  - sudo dpkg -i librdkafka++1_0.9.1-1_amd64.deb
-  - sudo dpkg -i librdkafka-dev_0.9.1-1_amd64.deb
-  - sudo dpkg -i scala-2.11.8.deb
-  - sudo apt-get -y install zookeeperd
-  - tar zxf kafka_2.11-0.9.0.1.tgz
+  - sudo apt-get -y install gcc scala zookeeperd git
+  - git clone --depth 1 --branch v1.1.0 https://github.com/edenhill/librdkafka.git
+  - cd librdkafka
+  - ./configure
+  - make
+  - sudo make install
+  - cd ..
+  - wget https://www-eu.apache.org/dist/kafka/2.3.0/kafka_2.11-2.3.0.tgz
+  - tar zxf kafka_2.11-2.3.0.tgz
 
 install:
-  - pecl install rdkafka-3.0.0
+  - pecl install rdkafka
   - composer self-update
   - composer install
 
 before_script:
-  - nohup kafka_2.11-0.9.0.1/bin/kafka-server-start.sh kafka_2.11-0.9.0.1/config/server.properties > kafka_2.11-0.9.0.1/kafka.log 2>&1 &
+  - nohup kafka_2.11-2.3.0/bin/kafka-server-start.sh kafka_2.11-2.3.0/config/server.properties > kafka_2.11-2.3.0/kafka.log 2>&1 &
   - sleep 5
 
 script:

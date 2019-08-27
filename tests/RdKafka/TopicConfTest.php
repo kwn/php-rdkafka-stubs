@@ -2,14 +2,16 @@
 
 namespace RdKafka;
 
-class TopicConfTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class TopicConfTest extends TestCase
 {
     /**
      * @var TopicConf
      */
     private $topicConf;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->topicConf = new TopicConf();
     }

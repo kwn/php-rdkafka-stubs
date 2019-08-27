@@ -2,7 +2,9 @@
 
 namespace RdKafka;
 
-class MessageTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class MessageTest extends TestCase
 {
     const PARTITION = 0;
     const OFFSET    = -1;
@@ -12,7 +14,7 @@ class MessageTest extends \PHPUnit_Framework_TestCase
      */
     private $message;
 
-    public function setUp()
+    public function setUp(): void
     {
         $producer = new Producer();
         $producer->addBrokers('localhost:9092');

@@ -1,6 +1,8 @@
 <?php
 
-class RdKafkaTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class RdKafkaTest extends TestCase
 {
     public function testRdKafkaClassIsAbstract()
     {

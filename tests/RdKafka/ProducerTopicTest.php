@@ -2,14 +2,16 @@
 
 namespace RdKafka;
 
-class ProducerTopicTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ProducerTopicTest extends TestCase
 {
     /**
      * @var ProducerTopic
      */
     private $producerTopic;
 
-    public function setUp()
+    public function setUp(): void
     {
         $producer = new Producer();
         $producer->addBrokers('localhost:9092');
