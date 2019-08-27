@@ -56,13 +56,6 @@ class ProducerTest extends TestCase
         self::assertEquals(0, $outQLen);
     }
 
-    public function testNewQueue()
-    {
-        $queue = $this->producer->newQueue();
-
-        self::assertInstanceOf(Queue::class, $queue);
-    }
-
     public function testNewTopic()
     {
         $topic = $this->producer->newTopic('test');
