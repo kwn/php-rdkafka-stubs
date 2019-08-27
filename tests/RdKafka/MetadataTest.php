@@ -36,7 +36,7 @@ class MetadataTest extends TestCase
 
     public function testGetOrigBrokerId()
     {
-        $this->assertEquals(-1, $this->metadata->getOrigBrokerId());
+        $this->assertEquals(0, $this->metadata->getOrigBrokerId());
     }
 
     public function testGetOrigBrokerName()
