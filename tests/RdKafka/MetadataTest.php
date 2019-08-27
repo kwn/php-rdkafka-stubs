@@ -41,6 +41,6 @@ class MetadataTest extends TestCase
 
     public function testGetOrigBrokerName()
     {
-        $this->assertEquals('localhost:9092/bootstrap', $this->metadata->getOrigBrokerName());
+        $this->assertEquals('localhost:9092/0', $this->metadata->getOrigBrokerName());
     }
 }
