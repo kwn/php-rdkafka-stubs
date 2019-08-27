@@ -7,20 +7,10 @@ This package provides you a set of stubs for [RdKafka extension](https://github.
 
 ## Installation
 
-Add package to your composer.json
-
-```json
-{
-    "require-dev": {
-        "kwn/php-rdkafka-stubs": "~1.3.0"
-    }
-}
-```
-
-And update your vendors
+Add package to your composer.json dev dependencies
 
 ```
-$ composer update kwn/php-rdkafka-stubs
+$ composer require kwn/php-rdkafka-stubs --dev
 ```
 
 ## Usage
