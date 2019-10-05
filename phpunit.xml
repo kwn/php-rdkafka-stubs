@@ -1,4 +1,4 @@
-<phpunit convertDeprecationsToExceptions = "true" bootstrap="vendor/autoload.php" colors="true" verbose="true">
+<phpunit bootstrap="vendor/autoload.php" colors="true" verbose="true">
     <testsuites>
         <testsuite name="RdKafka extension tests">
             <directory suffix=".php">tests/</directory>
