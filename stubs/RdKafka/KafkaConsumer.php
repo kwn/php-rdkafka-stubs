@@ -104,4 +104,31 @@ class KafkaConsumer
     public function getCommittedOffsets($topics, $timeout)
     {
     }
+
+    /**
+     * @param array $topicPartitions
+     * @param int   $timeout_ms
+     * @return array
+     */
+    public function offsetsForTimes (array $topicPartitions , int $timeout_ms) : array
+    {
+    }
+
+    /**
+     * @param string $topic
+     * @param int $partition
+     * @param int $low
+     * @param int $high
+     * @param int $timeout_ms
+     */
+    public function queryWatermarkOffsets($topic, $partition, &$low, &$high, $timeout_ms)
+    {
+    }
+
+    /**
+     * @return void
+     */
+    public function close(): void
+    {
+    }
 }

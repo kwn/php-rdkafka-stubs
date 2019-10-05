@@ -57,4 +57,14 @@ class ConsumerTopic extends Topic
     public function offsetStore($partition, $offset)
     {
     }
+
+    /**
+     * @param int $partition
+     * @param int $timeout_ms
+     * @param int $batch_size
+     * @return array
+     */
+    public function consumeBatch(int $partition, int $timeout_ms, int $batch_size): array
+    {
+    }
 }

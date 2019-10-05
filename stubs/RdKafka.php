@@ -37,13 +37,6 @@ abstract class RdKafka
     }
 
     /**
-     * @return Queue
-     */
-    public function newQueue()
-    {
-    }
-
-    /**
      * @param string    $topic_name
      * @param TopicConf $topic_conf
      *
@@ -79,6 +72,39 @@ abstract class RdKafka
      * @param int $timeout_ms
      */
     public function queryWatermarkOffsets($topic, $partition, &$low, &$high, $timeout_ms)
+    {
+    }
+
+    /**
+     * @param array $topicPartitions
+     * @param int   $timeout_ms
+     * @return array
+     */
+    public function offsetsForTimes (array $topicPartitions , int $timeout_ms) : array
+    {
+    }
+
+    /**
+     * @param array $topics
+     * @return array
+     */
+    public function getOffsetPositions(array $topics): array
+    {
+    }
+
+    /**
+     * @param int $purge_flags
+     * @return int
+     */
+    public function purge(int $purge_flags): int
+    {
+    }
+
+    /**
+     * @param int $timeout_ms
+     * @return int
+     */
+    public function flush(int $timeout_ms): int
     {
     }
 }
