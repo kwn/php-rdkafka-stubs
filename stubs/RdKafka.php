@@ -80,7 +80,7 @@ abstract class RdKafka
      * @param int   $timeout_ms
      * @return array
      */
-    public function offsetsForTimes (array $topicPartitions , int $timeout_ms)
+    public function offsetsForTimes ($topicPartitions , $timeout_ms)
     {
     }
 
@@ -88,7 +88,7 @@ abstract class RdKafka
      * @param int $purge_flags
      * @return int
      */
-    public function purge(int $purge_flags)
+    public function purge($purge_flags)
     {
     }
 
@@ -96,7 +96,7 @@ abstract class RdKafka
      * @param int $timeout_ms
      * @return int
      */
-    public function flush(int $timeout_ms)
+    public function flush($timeout_ms)
     {
     }
 }

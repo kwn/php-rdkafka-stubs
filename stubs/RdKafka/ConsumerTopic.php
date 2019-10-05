@@ -64,7 +64,7 @@ class ConsumerTopic extends Topic
      * @param int $batch_size
      * @return array
      */
-    public function consumeBatch(int $partition, int $timeout_ms, int $batch_size)
+    public function consumeBatch($partition, $timeout_ms, $batch_size)
     {
     }
 }

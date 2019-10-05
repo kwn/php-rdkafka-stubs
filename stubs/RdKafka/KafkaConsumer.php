@@ -110,7 +110,7 @@ class KafkaConsumer
      * @param int   $timeout_ms
      * @return array
      */
-    public function offsetsForTimes (array $topicPartitions , int $timeout_ms)
+    public function offsetsForTimes ($topicPartitions , $timeout_ms)
     {
     }
 
@@ -129,7 +129,7 @@ class KafkaConsumer
      * @param array $topics
      * @return array
      */
-    public function getOffsetPositions(array $topics)
+    public function getOffsetPositions($topics)
     {
     }
 
