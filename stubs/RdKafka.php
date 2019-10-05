@@ -85,14 +85,6 @@ abstract class RdKafka
     }
 
     /**
-     * @param array $topics
-     * @return array
-     */
-    public function getOffsetPositions(array $topics): array
-    {
-    }
-
-    /**
      * @param int $purge_flags
      * @return int
      */

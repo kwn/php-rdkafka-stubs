@@ -126,6 +126,14 @@ class KafkaConsumer
     }
 
     /**
+     * @param array $topics
+     * @return array
+     */
+    public function getOffsetPositions(array $topics): array
+    {
+    }
+
+    /**
      * @return void
      */
     public function close(): void
