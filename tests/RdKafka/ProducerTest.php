@@ -2,6 +2,7 @@
 
 namespace RdKafka;
 
+use PHPUnit\Framework\Error\Deprecated;
 use PHPUnit\Framework\TestCase;
 
 class ProducerTest extends TestCase
@@ -75,6 +76,8 @@ class ProducerTest extends TestCase
 
     public function testSetLogLevel()
     {
+        $this->expectException(Deprecated::class);
+
         $this->producer->setLogLevel(LOG_DEBUG);
 
         self::markTestIncomplete('Create real test');

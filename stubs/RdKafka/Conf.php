@@ -86,4 +86,13 @@ class Conf
     public function setOffsetCommitCb(callable $callback)
     {
     }
+
+    /**
+     * @param callable $callback
+     *
+     * @return void
+     */
+    public function setLogCb(callable $callback)
+    {
+    }
 }
