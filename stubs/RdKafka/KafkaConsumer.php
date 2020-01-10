@@ -100,6 +100,7 @@ class KafkaConsumer
     /**
      * @param array $topics
      * @param int   $timeout Timeout in milliseconds
+     * @return array
      */
     public function getCommittedOffsets($topics, $timeout)
     {
