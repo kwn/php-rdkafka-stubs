@@ -25,7 +25,7 @@ class Message
     public $payload;
 
     /**
-     * @var string
+     * @var string|null
      */
     public $key;
 
@@ -40,7 +40,7 @@ class Message
     public $timestamp;
 
     /**
-     * @var array
+     * @var array|null
      */
     public $headers;
 
