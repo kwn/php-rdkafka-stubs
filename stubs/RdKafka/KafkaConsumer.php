@@ -98,11 +98,13 @@ class KafkaConsumer
     }
 
     /**
-     * @param array $topics
-     * @param int   $timeout Timeout in milliseconds
-     * @return array
+     * @param TopicPartition[] $topicPartitions
+     * @param int              $timeout_ms Timeout in milliseconds
+     *
+     * @throws Exception
+     * @return TopicPartition[]
      */
-    public function getCommittedOffsets($topics, $timeout)
+    public function getCommittedOffsets($topicPartitions, $timeout_ms)
     {
     }
 
