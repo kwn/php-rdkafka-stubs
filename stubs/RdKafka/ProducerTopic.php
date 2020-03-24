@@ -26,8 +26,9 @@ class ProducerTopic extends Topic
      * @param string      $payload
      * @param string|null $key
      * @param array|null  $headers
+     * @param int         $timestamp_ms
      */
-    public function producev($partition, $msgflags, $payload, $key = null, $headers = null)
+    public function producev($partition, $msgflags, $payload, $key = null, $headers = null, $timestamp_ms = null)
     {
     }
 }
