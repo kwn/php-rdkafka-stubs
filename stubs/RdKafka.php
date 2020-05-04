@@ -58,6 +58,8 @@ abstract class RdKafka
     /**
      * @param int $level
      *
+     * @deprecated
+     *
      * @return void
      */
     public function setLogLevel($level)
