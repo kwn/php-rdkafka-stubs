@@ -27,6 +27,8 @@ class Conf
     /**
      * @param TopicConf $topic_conf
      *
+     * @deprecated Set default topic settings normally like global configuration settings.
+     *
      * @return void
      */
     public function setDefaultTopicConf(TopicConf $topic_conf)
