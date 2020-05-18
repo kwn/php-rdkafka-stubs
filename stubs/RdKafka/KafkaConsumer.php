@@ -12,7 +12,7 @@ class KafkaConsumer
     }
 
     /**
-     * @param TopicPartition[] $topic_partitions
+     * @param TopicPartition[]|null $topic_partitions
      *
      * @throws Exception
      * @return void
@@ -32,7 +32,7 @@ class KafkaConsumer
     }
 
     /**
-     * @param string $message_or_offsets
+     * @param string|null $message_or_offsets
      *
      * @throws Exception
      * @return void
@@ -61,14 +61,14 @@ class KafkaConsumer
     }
 
     /**
-     * @param bool               $all_topics
-     * @param KafkaConsumerTopic $only_topic
-     * @param int                $timeout_ms
+     * @param bool                    $all_topics
+     * @param KafkaConsumerTopic|null $only_topic
+     * @param int                     $timeout_ms
      *
      * @throws Exception
      * @return Metadata
      */
-    public function getMetadata($all_topics, $only_topic = null, $timeout_ms)
+    public function getMetadata($all_topics, KafkaConsumerTopic $only_topic = null, $timeout_ms)
     {
     }
 

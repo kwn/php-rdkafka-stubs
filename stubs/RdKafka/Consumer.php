@@ -5,15 +5,15 @@ namespace RdKafka;
 class Consumer extends \RdKafka
 {
     /**
-     * @param Conf $conf
+     * @param Conf|null $conf
      */
     public function __construct(Conf $conf = null)
     {
     }
 
     /**
-     * @param string    $topic_name
-     * @param TopicConf $topic_conf
+     * @param string         $topic_name
+     * @param TopicConf|null $topic_conf
      *
      * @return ConsumerTopic
      */
