@@ -28,12 +28,13 @@ class ProducerTest extends TestCase
         }
 
         $configuration = new Conf();
+        $configuration->set('metadata.broker.list', 'localhost:9092');
+        $configuration->set('transactional.id', 'some-id');
         $configuration->setDrMsgCb(function (\RdKafka $kafka, Message $message) {
             file_put_contents($this->filename, $message->payload);
         });
 
         $this->producer = new Producer($configuration);
-        $this->producer->addBrokers('localhost:9092');
     }
 
     public function testAddBrokers()
@@ -81,5 +82,30 @@ class ProducerTest extends TestCase
         $this->producer->setLogLevel(LOG_DEBUG);
 
         self::markTestIncomplete('Create real test');
+    }
+
+    public function testInitTransactions()
+    {
+        self::assertNull($this->producer->initTransactions(10000));
+    }
+
+    public function testBeginTransaction()
+    {
+        $this->producer->initTransactions(10000);
+        self::assertNull($this->producer->beginTransaction());
+    }
+
+    public function testCommitTransaction()
+    {
+        $this->producer->initTransactions(10000);
+        $this->producer->beginTransaction();
+        self::assertNull($this->producer->commitTransactions(10000));
+    }
+
+    public function testAbortTransaction()
+    {
+        $this->producer->initTransactions(10000);
+        $this->producer->beginTransaction();
+        self::assertNull($this->producer->abortTransactions(10000));
     }
 }
