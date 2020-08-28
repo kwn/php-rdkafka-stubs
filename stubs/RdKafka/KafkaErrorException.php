@@ -2,7 +2,7 @@
 
 namespace RdKafka;
 
-class KafkaErrorException  extends \Exception
+class KafkaErrorException extends \Exception
 {
     /**
      * @param string $message
