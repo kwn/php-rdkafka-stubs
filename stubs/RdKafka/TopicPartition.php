@@ -35,7 +35,7 @@ class TopicPartition
     }
 
     /**
-     * @param string $offset
+     * @param int $offset
      *
      * @return void
      */
