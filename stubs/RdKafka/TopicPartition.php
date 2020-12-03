@@ -44,7 +44,7 @@ class TopicPartition
     }
 
     /**
-     * @param string $partition
+     * @param int $partition
      *
      * @return void
      */
