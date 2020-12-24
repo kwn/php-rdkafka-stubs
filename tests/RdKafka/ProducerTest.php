@@ -29,7 +29,6 @@ class ProducerTest extends TestCase
 
         $configuration = new Conf();
         $configuration->set('metadata.broker.list', 'localhost:9092');
-        $configuration->set('transactional.id', 'some-id');
         $configuration->setDrMsgCb(function (\RdKafka $kafka, Message $message) {
             file_put_contents($this->filename, $message->payload);
         });
@@ -87,17 +86,35 @@ class ProducerTest extends TestCase
 
     public function testInitTransactions()
     {
+        $configuration = new Conf();
+        $configuration->set('metadata.broker.list', 'localhost:9092');
+        $configuration->set('transactional.id', 'some-id');
+
+        $this->producer = new Producer($configuration);
+
         self::assertNull($this->producer->initTransactions(10000));
     }
 
     public function testBeginTransaction()
     {
+        $configuration = new Conf();
+        $configuration->set('metadata.broker.list', 'localhost:9092');
+        $configuration->set('transactional.id', 'some-id');
+
+        $this->producer = new Producer($configuration);
+
         $this->producer->initTransactions(10000);
         self::assertNull($this->producer->beginTransaction());
     }
 
     public function testCommitTransaction()
     {
+        $configuration = new Conf();
+        $configuration->set('metadata.broker.list', 'localhost:9092');
+        $configuration->set('transactional.id', 'some-id');
+
+        $this->producer = new Producer($configuration);
+
         $this->producer->initTransactions(10000);
         $this->producer->beginTransaction();
         self::assertNull($this->producer->commitTransaction(10000));
@@ -105,6 +122,12 @@ class ProducerTest extends TestCase
 
     public function testAbortTransaction()
     {
+        $configuration = new Conf();
+        $configuration->set('metadata.broker.list', 'localhost:9092');
+        $configuration->set('transactional.id', 'some-id');
+
+        $this->producer = new Producer($configuration);
+
         $this->producer->initTransactions(10000);
         $this->producer->beginTransaction();
         self::assertNull($this->producer->abortTransaction(10000));
