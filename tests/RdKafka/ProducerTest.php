@@ -99,13 +99,13 @@ class ProducerTest extends TestCase
     {
         $this->producer->initTransactions(10000);
         $this->producer->beginTransaction();
-        self::assertNull($this->producer->commitTransactions(10000));
+        self::assertNull($this->producer->commitTransaction(10000));
     }
 
     public function testAbortTransaction()
     {
         $this->producer->initTransactions(10000);
         $this->producer->beginTransaction();
-        self::assertNull($this->producer->abortTransactions(10000));
+        self::assertNull($this->producer->abortTransaction(10000));
     }
 }

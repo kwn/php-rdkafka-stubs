@@ -20,8 +20,9 @@ class QueueTest extends TestCase
 
     public function setUp(): void
     {
-        $consumer = new Consumer();
-        $consumer->addBrokers('localhost:9092');
+        $conf = new Conf();
+        $conf->set('metadata.broker.list', 'localhost:9092');
+        $consumer = new Consumer($conf);
 
         $this->consumerTopic = $consumer->newTopic('test');
         $this->queue = $consumer->newQueue();
