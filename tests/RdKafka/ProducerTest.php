@@ -70,7 +70,8 @@ class ProducerTest extends TestCase
         $topic = $this->producer->newTopic('test');
         $topic->produce(RD_KAFKA_PARTITION_UA, 0, self::MESSAGE_PAYLOAD);
 
-        $this->producer->poll(100);
+        $this->producer->poll(0);
+        $this->producer->flush(10000);
 
         self::assertStringEqualsFile($this->filename, self::MESSAGE_PAYLOAD);
     }
