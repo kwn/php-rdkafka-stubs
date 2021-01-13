@@ -18,14 +18,14 @@ abstract class RdKafka
     }
 
     /**
-     * @param bool  $all_topics
-     * @param Topic $only_topic
-     * @param int   $timeout_ms
+     * @param bool       $all_topics
+     * @param Topic|null $only_topic
+     * @param int        $timeout_ms
      *
      * @throws Exception
      * @return Metadata
      */
-    public function getMetadata($all_topics, $only_topic = null, $timeout_ms)
+    public function getMetadata($all_topics, Topic $only_topic = null, $timeout_ms)
     {
     }
 
@@ -37,8 +37,8 @@ abstract class RdKafka
     }
 
     /**
-     * @param string    $topic_name
-     * @param TopicConf $topic_conf
+     * @param string         topic_name
+     * @param TopicConf|null $topic_conf
      *
      * @return Topic
      */

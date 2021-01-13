@@ -9,10 +9,10 @@ class ProducerTopic extends Topic
     }
 
     /**
-     * @param int    $partition
-     * @param int    $msgflags
-     * @param string $payload
-     * @param string $key
+     * @param int         $partition
+     * @param int         $msgflags
+     * @param string      $payload
+     * @param string|null $key
      *
      * @return void
      */
