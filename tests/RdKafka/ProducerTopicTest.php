@@ -13,8 +13,9 @@ class ProducerTopicTest extends TestCase
 
     public function setUp(): void
     {
-        $producer = new Producer();
-        $producer->addBrokers('localhost:9092');
+        $conf = new Conf();
+        $conf->set('metadata.broker.list', 'localhost:9092');
+        $producer = new Producer($conf);
 
         $this->producerTopic = $producer->newTopic('test');
     }

@@ -65,9 +65,9 @@ class ConstantsTest extends TestCase
         $this->assertTrue(defined('RD_KAFKA_RESP_ERR_STALE_CTRL_EPOCH'));
         $this->assertTrue(defined('RD_KAFKA_RESP_ERR_OFFSET_METADATA_TOO_LARGE'));
         $this->assertTrue(defined('RD_KAFKA_RESP_ERR_NETWORK_EXCEPTION'));
-        $this->assertTrue(defined('RD_KAFKA_RESP_ERR_GROUP_LOAD_IN_PROGRESS'));
-        $this->assertTrue(defined('RD_KAFKA_RESP_ERR_GROUP_COORDINATOR_NOT_AVAILABLE'));
-        $this->assertTrue(defined('RD_KAFKA_RESP_ERR_NOT_COORDINATOR_FOR_GROUP'));
+        $this->assertTrue(defined('RD_KAFKA_RESP_ERR_COORDINATOR_LOAD_IN_PROGRESS'));
+        $this->assertTrue(defined('RD_KAFKA_RESP_ERR_COORDINATOR_NOT_AVAILABLE'));
+        $this->assertTrue(defined('RD_KAFKA_RESP_ERR_NOT_COORDINATOR'));
         $this->assertTrue(defined('RD_KAFKA_RESP_ERR_TOPIC_EXCEPTION'));
         $this->assertTrue(defined('RD_KAFKA_RESP_ERR_RECORD_LIST_TOO_LARGE'));
         $this->assertTrue(defined('RD_KAFKA_RESP_ERR_NOT_ENOUGH_REPLICAS'));

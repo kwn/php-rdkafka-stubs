@@ -14,8 +14,9 @@ class ConsumerTest extends TestCase
 
     public function setUp(): void
     {
-        $this->consumer = new Consumer();
-        $this->consumer->addBrokers('localhost:9092');
+        $conf = new Conf();
+        $conf->set('metadata.broker.list', 'localhost:9092');
+        $this->consumer = new Consumer($conf);
     }
 
     public function testAddBrokers()

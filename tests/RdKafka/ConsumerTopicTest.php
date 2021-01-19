@@ -15,8 +15,9 @@ class ConsumerTopicTest extends TestCase
 
     public function setUp(): void
     {
+        $conf = new Conf();
+        $conf->set('metadata.broker.list', 'localhost:9092');
         $consumer = new Consumer();
-        $consumer->addBrokers('localhost:9092');
 
         $this->consumerTopic = $consumer->newTopic('test');
     }
@@ -40,8 +41,9 @@ class ConsumerTopicTest extends TestCase
     {
         $this->markTestSkipped('Fails on CI');
 
-        $producer = new Producer();
-        $producer->addBrokers('localhost:9092');
+        $conf = new Conf();
+        $conf->set('metadata.broker.list', 'localhost:9092');
+        $producer = new Producer($conf);
 
         /** @var ProducerTopic $producerTopic */
         $producerTopic = $producer->newTopic('test');

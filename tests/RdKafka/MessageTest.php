@@ -16,15 +16,16 @@ class MessageTest extends TestCase
 
     public function setUp(): void
     {
-        $producer = new Producer();
-        $producer->addBrokers('localhost:9092');
+        $conf = new Conf();
+        $conf->set('metadata.broker.list', 'localhost:9092');
+
+        $producer = new Producer($conf);
 
         /** @var ProducerTopic $producerTopic */
         $producerTopic = $producer->newTopic('test');
         $producerTopic->produce(RD_KAFKA_PARTITION_UA, self::PARTITION, 'test message 2', 'key_2');
 
-        $consumer = new Consumer();
-        $consumer->addBrokers('localhost:9092');
+        $consumer = new Consumer($conf);
 
         /** @var ConsumerTopic $consumerTopic */
         $consumerTopic = $consumer->newTopic('test');
