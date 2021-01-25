@@ -9,6 +9,7 @@
         }
     ],
     "require": {
+        "php": ">=5.6",
         "ext-rdkafka": ">=4.0"
     },
     "require-dev": {
