@@ -20,7 +20,7 @@ class Message
     public $partition;
 
     /**
-     * @var string
+     * @var string|null
      */
     public $payload;
 
