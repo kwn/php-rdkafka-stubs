@@ -24,6 +24,7 @@ class Producer extends \RdKafka
     /**
      * @param int $timeoutMs
      *
+     * @throws KafkaErrorException
      * @return void
      */
     public function initTransactions(int $timeoutMs)
@@ -31,6 +32,7 @@ class Producer extends \RdKafka
     }
 
     /**
+     * @throws KafkaErrorException
      * @return void
      */
     public function beginTransaction()
@@ -40,6 +42,7 @@ class Producer extends \RdKafka
     /**
      * @param int $timeoutMs
      *
+     * @throws KafkaErrorException
      * @return void
      */
     public function commitTransaction(int $timeoutMs)
@@ -49,6 +52,7 @@ class Producer extends \RdKafka
     /**
      * @param int $timeoutMs
      *
+     * @throws KafkaErrorException
      * @return void
      */
     public function abortTransaction(int $timeoutMs)
