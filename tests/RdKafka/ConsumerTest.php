@@ -68,13 +68,4 @@ class ConsumerTest extends TestCase
 
         $this->markTestIncomplete('Create real test and trigger a callback using poll()');
     }
-
-    public function testSetLogLevel()
-    {
-        $this->expectException(Deprecated::class);
-
-        $this->consumer->setLogLevel(LOG_DEBUG);
-
-        $this->markTestIncomplete('Create real test');
-    }
 }

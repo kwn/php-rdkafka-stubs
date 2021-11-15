@@ -75,15 +75,6 @@ class ProducerTest extends TestCase
         self::assertStringEqualsFile($this->filename, self::MESSAGE_PAYLOAD);
     }
 
-    public function testSetLogLevel()
-    {
-        $this->expectException(Deprecated::class);
-
-        $this->producer->setLogLevel(LOG_DEBUG);
-
-        self::markTestIncomplete('Create real test');
-    }
-
     public function testInitTransactions()
     {
         $configuration = new Conf();
