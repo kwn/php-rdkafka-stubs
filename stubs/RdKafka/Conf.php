@@ -8,7 +8,7 @@ namespace RdKafka;
 class Conf
 {
     /**
-     * @return array
+     * @return array<string, string>
      */
     public function dump()
     {
