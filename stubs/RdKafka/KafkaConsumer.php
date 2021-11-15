@@ -42,7 +42,7 @@ class KafkaConsumer
     }
 
     /**
-     * @param string $timeout_ms
+     * @param int $timeout_ms
      *
      * @throws Exception
      * @throws \InvalidArgumentException
