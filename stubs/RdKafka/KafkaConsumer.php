@@ -130,6 +130,8 @@ class KafkaConsumer
 
     /**
      * @param array $topics
+     *
+     * @throws Exception
      * @return array
      */
     public function getOffsetPositions($topics)

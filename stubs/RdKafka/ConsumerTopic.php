@@ -62,6 +62,9 @@ class ConsumerTopic extends Topic
      * @param int $partition
      * @param int $timeout_ms
      * @param int $batch_size
+     *
+     * @throws Exception
+     * @throws \InvalidArgumentException
      * @return array
      */
     public function consumeBatch($partition, $timeout_ms, $batch_size)
