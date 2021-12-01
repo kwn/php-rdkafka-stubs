@@ -62,10 +62,13 @@ class ConstantsTest extends TestCase
     public function testConstantsExistButInvalidValue()
     {
         $extensionConstants = self::$extensionConstants;
-        unset($extensionConstants['RD_KAFKA_VERSION']);
-
         $stubConstants = self::$stubConstants;
+
+        // unset because depends of extension version
+        unset($extensionConstants['RD_KAFKA_VERSION']);
+        unset($extensionConstants['RD_KAFKA_BUILD_VERSION']);
         unset($stubConstants['RD_KAFKA_VERSION']);
+        unset($stubConstants['RD_KAFKA_BUILD_VERSION']);
 
         // constants in both places but has different values
         $this->assertEquals(
