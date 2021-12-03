@@ -7,7 +7,7 @@ php:
 
 before_install:
   - sudo apt-get -y install gcc scala zookeeperd git
-  - git clone --depth 1 --branch v1.5.2 https://github.com/edenhill/librdkafka.git
+  - git clone --depth 1 --branch v1.8.2 https://github.com/edenhill/librdkafka.git
   - cd librdkafka
   - ./configure
   - make
@@ -17,7 +17,7 @@ before_install:
   - tar zxf kafka_2.11-2.3.0.tgz
 
 install:
-  - pecl install rdkafka
+  - pecl install rdkafka-5.0.2
   - composer self-update
   - composer install
 
