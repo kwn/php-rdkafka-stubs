@@ -25,6 +25,11 @@ class Message
     public $payload;
 
     /**
+     * @var int|null
+     */
+    public $len;
+
+    /**
      * @var string|null
      */
     public $key;
@@ -43,6 +48,11 @@ class Message
      * @var array|null
      */
     public $headers;
+
+    /**
+     * @var string|null
+     */
+    public $opaque;
 
     /**
      * @return string

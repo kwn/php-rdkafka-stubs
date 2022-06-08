@@ -80,6 +80,16 @@ class KafkaConsumer
     }
 
     /**
+     * @param string    $topic_name
+     * @param TopicConf $topic_conf
+     *
+     * @return KafkaConsumerTopic
+     */
+    public function newTopic($topic_name, TopicConf $topic_conf = null)
+    {
+    }
+
+    /**
      * @param array $topics
      *
      * @throws Exception
@@ -142,6 +152,22 @@ class KafkaConsumer
      * @return void
      */
     public function close()
+    {
+    }
+
+    /**
+     * @param TopicPartition[] $topic_partitions
+     * @return TopicPartition[]
+     */
+    public function pausePartitions($topic_partitions)
+    {
+    }
+
+    /**
+     * @param TopicPartition[] $topic_partitions
+     * @return TopicPartition[]
+     */
+    public function resumePartitions($topic_partitions)
     {
     }
 }

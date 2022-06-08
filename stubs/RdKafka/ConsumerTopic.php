@@ -70,4 +70,15 @@ class ConsumerTopic extends Topic
     public function consumeBatch($partition, $timeout_ms, $batch_size)
     {
     }
+
+    /**
+     * @param int $partition
+     * @param int $timeout_ms
+     * @param callable $callback
+     *
+     * @return void
+     */
+    public function consumeCallback($partition, $timeout_ms, callable $callback)
+    {
+    }
 }
