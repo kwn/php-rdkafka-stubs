@@ -13,15 +13,4 @@ class KafkaConsumerTopic extends Topic
     public function offsetStore($partition, $offset)
     {
     }
-
-    /**
-     * @param int $partition
-     * @param int $timeout_ms
-     * @param callable $callback
-     *
-     * @return void
-     */
-    public function consumeCallback($partition, $timeout_ms, callable $callback)
-    {
-    }
 }
