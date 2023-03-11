@@ -10,7 +10,7 @@ class Message
     public $err;
 
     /**
-     * @var string
+     * @var string|null
      */
     public $topic_name;
 
@@ -40,7 +40,7 @@ class Message
     public $offset;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $timestamp;
 
