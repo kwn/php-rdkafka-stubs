@@ -11,28 +11,28 @@ class Metadata
     /**
      * @return Collection|Broker[]
      */
-    public function getBrokers()
+    public function getBrokers(): Collection
     {
     }
 
     /**
      * @return Collection|Topic[]
      */
-    public function getTopics()
+    public function getTopics(): Collection
     {
     }
 
     /**
      * @return int
      */
-    public function getOrigBrokerId()
+    public function getOrigBrokerId(): int
     {
     }
 
     /**
      * @return string
      */
-    public function getOrigBrokerName()
+    public function getOrigBrokerName(): string
     {
     }
 }

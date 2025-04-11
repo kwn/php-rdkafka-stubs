@@ -12,36 +12,42 @@ class KafkaErrorException extends \Exception
      * @param boolean $isRetriable
      * @param boolean $transactionRequiresAbort
      */
-    public function __construct($message, $code, $errorString, $isFatal, $isRetriable, $transactionRequiresAbort)
-    {
+    public function __construct(
+        string $message,
+        int $code,
+        string $errorString,
+        bool $isFatal,
+        bool $isRetriable,
+        bool $transactionRequiresAbort
+    ) {
         parent::__construct($message, $code);
     }
 
     /**
      * @returns string
      */
-    public function getErrorString()
+    public function getErrorString(): string
     {
     }
 
     /**
      * @returns boolean
      */
-    public function isFatal()
+    public function isFatal(): bool
     {
     }
 
     /**
      * @returns boolean
      */
-    public function isRetriable()
+    public function isRetriable(): bool
     {
     }
 
     /**
      * @returns boolean
      */
-    public function transactionRequiresAbort()
+    public function transactionRequiresAbort(): bool
     {
     }
 }

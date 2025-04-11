@@ -10,7 +10,7 @@ class TopicConf
     /**
      * @return array
      */
-    public function dump()
+    public function dump(): array
     {
     }
 
@@ -20,7 +20,7 @@ class TopicConf
      *
      * @return void
      */
-    public function set($name, $value)
+    public function set(string $name, string $value)
     {
     }
 
@@ -29,7 +29,7 @@ class TopicConf
      *
      * @return void
      */
-    public function setPartitioner($partitioner)
+    public function setPartitioner(int $partitioner)
     {
     }
 }

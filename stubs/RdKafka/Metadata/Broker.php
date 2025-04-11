@@ -7,21 +7,21 @@ class Broker
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
     }
 
     /**
      * @return string
      */
-    public function getHost()
+    public function getHost(): string
     {
     }
 
     /**
      * @return int
      */
-    public function getPort()
+    public function getPort(): int
     {
     }
 }

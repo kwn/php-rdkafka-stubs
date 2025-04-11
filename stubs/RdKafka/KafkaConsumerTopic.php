@@ -10,7 +10,7 @@ class KafkaConsumerTopic extends Topic
      *
      * @return void
      */
-    public function offsetStore($partition, $offset)
+    public function offsetStore(int $partition, int $offset)
     {
     }
 }

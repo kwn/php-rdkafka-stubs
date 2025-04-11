@@ -11,13 +11,14 @@ class ProducerTopic extends Topic
     /**
      * @param int    $partition
      * @param int    $msgflags
-     * @param string $payload
-     * @param string $key
+     * @param string|null $payload
+     * @param string|null $key
+     * @param string|null $opaque
      *
      * @throws Exception
      * @return void
      */
-    public function produce($partition, $msgflags, $payload, $key = null)
+    public function produce(int $partition, int $msgflags, string $payload = null, string $key = null, string $opaque = null)
     {
     }
 
@@ -28,10 +29,11 @@ class ProducerTopic extends Topic
      * @param string|null $key
      * @param array|null  $headers
      * @param int         $timestamp_ms
+     * @param string|null $opaque
      *
      * @throws Exception
      */
-    public function producev($partition, $msgflags, $payload, $key = null, $headers = null, $timestamp_ms = null)
+    public function producev(int $partition, int $msgflags, string $payload, string $key = null, array $headers = null, int $timestamp_ms = null, string $opaque = null)
     {
     }
 }

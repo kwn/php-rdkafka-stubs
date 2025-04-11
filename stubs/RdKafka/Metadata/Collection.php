@@ -28,7 +28,7 @@ class Collection implements \Iterator, \Countable
     /**
      * @return boolean
      */
-    public function valid()
+    public function valid(): bool
     {
     }
 
@@ -42,7 +42,7 @@ class Collection implements \Iterator, \Countable
     /**
      * @return int
      */
-    public function count()
+    public function count(): int
     {
     }
 }

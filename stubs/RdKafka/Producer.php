@@ -12,12 +12,12 @@ class Producer extends \RdKafka
     }
 
     /**
-     * @param string    $topic_name
-     * @param TopicConf $topic_conf
+     * @param string         $topic_name
+     * @param TopicConf|null $topic_conf
      *
      * @return ProducerTopic
      */
-    public function newTopic($topic_name, TopicConf $topic_conf = null)
+    public function newTopic(string $topic_name, TopicConf $topic_conf = null): Topic
     {
     }
 
