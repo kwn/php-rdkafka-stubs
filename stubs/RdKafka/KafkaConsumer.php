@@ -83,9 +83,9 @@ class KafkaConsumer
      * @param string         $topic_name
      * @param TopicConf|null $topic_conf
      *
-     * @return ConsumerTopic
+     * @return KafkaConsumerTopic
      */
-    public function newTopic(string $topic_name, TopicConf $topic_conf = null): ConsumerTopic
+    public function newTopic(string $topic_name, TopicConf $topic_conf = null): KafkaConsumerTopic
     {
     }
 
