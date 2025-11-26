@@ -7,14 +7,14 @@ class Topic
     /**
      * @return string
      */
-    public function getTopic()
+    public function getTopic(): string
     {
     }
 
     /**
      * @return Partition[]
      */
-    public function getPartitions()
+    public function getPartitions(): array
     {
     }
 

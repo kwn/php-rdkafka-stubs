@@ -12,12 +12,12 @@ class KafkaConsumer
     }
 
     /**
-     * @param TopicPartition[] $topic_partitions
+     * @param TopicPartition[]|null $topic_partitions
      *
      * @throws Exception
      * @return void
      */
-    public function assign($topic_partitions = null)
+    public function assign(array $topic_partitions = null)
     {
     }
 
@@ -32,12 +32,12 @@ class KafkaConsumer
     }
 
     /**
-     * @param string $message_or_offsets
+     * @param string|null $message_or_offsets
      *
      * @throws Exception
      * @return void
      */
-    public function commitAsync($message_or_offsets = null)
+    public function commitAsync(string $message_or_offsets = null)
     {
     }
 
@@ -48,7 +48,7 @@ class KafkaConsumer
      * @throws \InvalidArgumentException
      * @return Message
      */
-    public function consume($timeout_ms)
+    public function consume(int $timeout_ms): Message
     {
     }
 
@@ -56,7 +56,7 @@ class KafkaConsumer
      * @throws Exception
      * @return TopicPartition[]
      */
-    public function getAssignment()
+    public function getAssignment(): array
     {
     }
 
@@ -68,34 +68,35 @@ class KafkaConsumer
      * @throws Exception
      * @return Metadata
      */
-    public function getMetadata($all_topics, $only_topic, $timeout_ms)
+    public function getMetadata(bool $all_topics, KafkaConsumerTopic $only_topic = null, int $timeout_ms): Metadata
     {
     }
 
     /**
-     * @return array
+     * @return string[]
      */
-    public function getSubscription()
+    public function getSubscription(): array
     {
     }
 
     /**
-     * @param string    $topic_name
-     * @param TopicConf $topic_conf
+     * @param string         $topic_name
+     * @param TopicConf|null $topic_conf
      *
      * @return KafkaConsumerTopic
      */
-    public function newTopic($topic_name, TopicConf $topic_conf = null)
+    public function newTopic(string $topic_name, TopicConf $topic_conf = null): KafkaConsumerTopic
     {
     }
 
     /**
-     * @param array $topics
+     * @param string[] $topics
+     * Regex pattern matching automatically performed for topics prefixed with ^ (e.g. ^myPfx[0-9]_.*)
      *
      * @throws Exception
      * @return void
      */
-    public function subscribe($topics)
+    public function subscribe(array $topics)
     {
     }
 
@@ -114,16 +115,16 @@ class KafkaConsumer
      * @throws Exception
      * @return TopicPartition[]
      */
-    public function getCommittedOffsets($topicPartitions, $timeout_ms)
+    public function getCommittedOffsets(array $topicPartitions, int $timeout_ms): array
     {
     }
 
     /**
-     * @param array $topicPartitions
-     * @param int   $timeout_ms
-     * @return array
+     * @param TopicPartition[] $topicPartitions
+     * @param int              $timeout_ms
+     * @return TopicPartition[]
      */
-    public function offsetsForTimes($topicPartitions, $timeout_ms)
+    public function offsetsForTimes(array $topicPartitions, int $timeout_ms): array
     {
     }
 
@@ -134,17 +135,17 @@ class KafkaConsumer
      * @param int $high
      * @param int $timeout_ms
      */
-    public function queryWatermarkOffsets($topic, $partition, &$low, &$high, $timeout_ms)
+    public function queryWatermarkOffsets(string $topic, int $partition, int &$low, int &$high, int $timeout_ms)
     {
     }
 
     /**
-     * @param array $topics
+     * @param TopicPartition[] $topics
      *
      * @throws Exception
-     * @return array
+     * @return TopicPartition[]
      */
-    public function getOffsetPositions($topics)
+    public function getOffsetPositions(array $topics): array
     {
     }
 
@@ -159,7 +160,7 @@ class KafkaConsumer
      * @param TopicPartition[] $topic_partitions
      * @return TopicPartition[]
      */
-    public function pausePartitions($topic_partitions)
+    public function pausePartitions(array $topic_partitions): array
     {
     }
 
@@ -167,7 +168,21 @@ class KafkaConsumer
      * @param TopicPartition[] $topic_partitions
      * @return TopicPartition[]
      */
-    public function resumePartitions($topic_partitions)
+    public function resumePartitions(array $topic_partitions): array
+    {
+    }
+
+    /**
+     * @param array $topic_partitions
+     */
+    public function incrementalAssign(array $topic_partitions)
+    {
+    }
+
+    /**
+     * @param array $topic_partitions
+     */
+    public function incrementalUnassign(array $topic_partitions)
     {
     }
 }

@@ -4,7 +4,7 @@ use RdKafka\Exception;
 use RdKafka\Metadata;
 use RdKafka\Topic;
 use RdKafka\TopicConf;
-use RdKafka\Queue;
+use RdKafka\TopicPartition;
 
 abstract class RdKafka
 {
@@ -13,7 +13,7 @@ abstract class RdKafka
      *
      * @return int
      */
-    public function addBrokers($broker_list)
+    public function addBrokers(string $broker_list): int
     {
     }
 
@@ -25,14 +25,14 @@ abstract class RdKafka
      * @throws Exception
      * @return Metadata
      */
-    public function getMetadata($all_topics, $only_topic = null, $timeout_ms)
+    public function getMetadata(bool $all_topics, Topic $only_topic = null, int $timeout_ms): Metadata
     {
     }
 
     /**
      * @return int
      */
-    public function getOutQLen()
+    public function getOutQLen(): int
     {
     }
 
@@ -42,7 +42,7 @@ abstract class RdKafka
      *
      * @return Topic
      */
-    public function newTopic($topic_name, TopicConf $topic_conf = null)
+    public function newTopic(string $topic_name, TopicConf $topic_conf = null): Topic
     {
     }
 
@@ -51,7 +51,7 @@ abstract class RdKafka
      *
      * @return void
      */
-    public function poll($timeout_ms)
+    public function poll(int $timeout_ms)
     {
     }
 
@@ -62,7 +62,14 @@ abstract class RdKafka
      *
      * @return void
      */
-    public function setLogLevel($level)
+    public function setLogLevel(int $level)
+    {
+    }
+
+    /**
+     * @deprecated
+     */
+    public function setLogger(int $logger_id)
     {
     }
 
@@ -73,16 +80,16 @@ abstract class RdKafka
      * @param int $high
      * @param int $timeout_ms
      */
-    public function queryWatermarkOffsets($topic, $partition, &$low, &$high, $timeout_ms)
+    public function queryWatermarkOffsets(string $topic, int $partition, int &$low, int &$high, int $timeout_ms)
     {
     }
 
     /**
-     * @param array $topicPartitions
+     * @param TopicPartition[] $topicPartitions
      * @param int   $timeout_ms
-     * @return array
+     * @return TopicPartition[]
      */
-    public function offsetsForTimes ($topicPartitions , $timeout_ms)
+    public function offsetsForTimes (array $topicPartitions, int $timeout_ms): array
     {
     }
 
@@ -90,7 +97,7 @@ abstract class RdKafka
      * @param int $purge_flags
      * @return int
      */
-    public function purge($purge_flags)
+    public function purge(int $purge_flags): int
     {
     }
 
@@ -98,7 +105,38 @@ abstract class RdKafka
      * @param int $timeout_ms
      * @return int
      */
-    public function flush($timeout_ms)
+    public function flush(int $timeout_ms): int
     {
+    }
+
+    /**
+     * @param string $token_value
+     * @param int|float|string $lifetime_ms
+     * @param string $principal_name
+     * @param array $extensions
+     *
+     * @return void
+     */
+    public function oauthbearerSetToken(string $token_value, $lifetime_ms, string $principal_name, array $extensions = [])
+    {
+    }
+
+    /**
+     * @param string $error
+     *
+     * @return void
+     */
+    public function oauthbearerSetTokenFailure(string $error)
+    {
+    }
+
+    /**
+     * @param int $timeout_ms
+     *
+     * @return int
+     */
+    public function getControllerId(int $timeout_ms): int
+    {
+
     }
 }

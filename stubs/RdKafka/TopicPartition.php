@@ -16,21 +16,21 @@ class TopicPartition
     /**
      * @return int
      */
-    public function getOffset()
+    public function getOffset(): int
     {
     }
 
     /**
      * @return int
      */
-    public function getPartition()
+    public function getPartition(): int
     {
     }
 
     /**
      * @return string
      */
-    public function getTopic()
+    public function getTopic(): string
     {
     }
 
@@ -39,7 +39,7 @@ class TopicPartition
      *
      * @return void
      */
-    public function setOffset($offset)
+    public function setOffset(int $offset)
     {
     }
 
@@ -48,7 +48,7 @@ class TopicPartition
      *
      * @return void
      */
-    public function setPartition($partition)
+    public function setPartition(int $partition)
     {
     }
 
@@ -57,7 +57,7 @@ class TopicPartition
      *
      * @return void
      */
-    public function setTopic($topic_name)
+    public function setTopic(string $topic_name)
     {
     }
 }

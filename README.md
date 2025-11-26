@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/kwn/php-rdkafka-stubs.svg?branch=master)](https://travis-ci.org/kwn/php-rdkafka-stubs)
 [![Latest Stable Version](https://poser.pugx.org/kwn/php-rdkafka-stubs/v/stable)](https://packagist.org/packages/kwn/php-rdkafka-stubs)
 
-This package provides you a set of stubs for [RdKafka extension](https://github.com/arnaud-lb/php-rdkafka). It currently supports version 4.0. For older verisions of rdkafka extenstion (3.x and 0.9) please use version 1.x of this repository. 
+This package provides you a set of stubs for [RdKafka extension](https://github.com/arnaud-lb/php-rdkafka). It currently supports version 6.0. For older verisions of rdkafka extenstion (3.x and 0.9) please use version 1.x of this repository. 
 
 ## Installation
 

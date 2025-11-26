@@ -14,7 +14,7 @@ class ConsumerTopic extends Topic
      *
      * @return Message|null
      */
-    public function consume($partition, $timeout_ms)
+    public function consume(int $partition, int $timeout_ms)
     {
     }
 
@@ -25,7 +25,7 @@ class ConsumerTopic extends Topic
      *
      * @return void
      */
-    public function consumeQueueStart($partition, $offset, Queue $queue)
+    public function consumeQueueStart(int $partition, int $offset, Queue $queue)
     {
     }
 
@@ -35,7 +35,7 @@ class ConsumerTopic extends Topic
      *
      * @return void
      */
-    public function consumeStart($partition, $offset)
+    public function consumeStart(int $partition, int $offset)
     {
     }
 
@@ -44,7 +44,7 @@ class ConsumerTopic extends Topic
      *
      * @return void
      */
-    public function consumeStop($partition)
+    public function consumeStop(int $partition)
     {
     }
 
@@ -54,7 +54,7 @@ class ConsumerTopic extends Topic
      *
      * @return void
      */
-    public function offsetStore($partition, $offset)
+    public function offsetStore(int $partition, int $offset)
     {
     }
 
@@ -65,9 +65,9 @@ class ConsumerTopic extends Topic
      *
      * @throws Exception
      * @throws \InvalidArgumentException
-     * @return array
+     * @return Message[]|null
      */
-    public function consumeBatch($partition, $timeout_ms, $batch_size)
+    public function consumeBatch(int $partition, int $timeout_ms, int $batch_size)
     {
     }
 
@@ -78,7 +78,7 @@ class ConsumerTopic extends Topic
      *
      * @return void
      */
-    public function consumeCallback($partition, $timeout_ms, callable $callback)
+    public function consumeCallback(int $partition, int $timeout_ms, callable $callback)
     {
     }
 }

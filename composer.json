@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "ext-rdkafka": ">=4.0"
+        "ext-rdkafka": ">=6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.2.4"

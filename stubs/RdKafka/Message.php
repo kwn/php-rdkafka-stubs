@@ -5,17 +5,17 @@ namespace RdKafka;
 class Message
 {
     /**
-     * @var int
+     * @var int|null
      */
     public $err;
 
     /**
-     * @var string
+     * @var string|null
      */
     public $topic_name;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $partition;
 
@@ -35,19 +35,14 @@ class Message
     public $key;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $offset;
 
     /**
-     * @var int
+     * @var int|null
      */
     public $timestamp;
-
-    /**
-     * @var array|null
-     */
-    public $headers;
 
     /**
      * @var string|null
@@ -57,7 +52,11 @@ class Message
     /**
      * @return string
      */
-    public function errstr()
+    public function errstr(): string
+    {
+    }
+
+    public function headers(): array
     {
     }
 }

@@ -10,7 +10,7 @@ class Conf
     /**
      * @return array<string, string>
      */
-    public function dump()
+    public function dump(): array
     {
     }
 
@@ -20,7 +20,7 @@ class Conf
      *
      * @return void
      */
-    public function set($name, $value)
+    public function set(string $name, string $value)
     {
     }
 
@@ -36,7 +36,7 @@ class Conf
     }
 
     /**
-     * @param callable $callback
+     * @param callable $callback (RdKafka\Kafka $kafka, RdKafka\Message $message)
      *
      * @return void
      */
@@ -45,7 +45,7 @@ class Conf
     }
 
     /**
-     * @param callable $callback
+     * @param callable $callback (RdKafka\KafkaConsumer|RdKafka\Producer $kafka, int $err, string $reason)
      *
      * @return void
      */
@@ -54,7 +54,7 @@ class Conf
     }
 
     /**
-     * @param callable $callback
+     * @param callable $callback (RdKafka\KafkaConsumer $kafka, int $err, array $partitions)
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class Conf
     }
 
     /**
-     * @param callable $callback
+     * @param callable $callback (object $kafka, string $json, int $json_len);
      *
      * @return void
      */
@@ -72,7 +72,7 @@ class Conf
     }
 
     /**
-     * @param callable $callback
+     * @param callable $callback (RdKafka\Message $msg)
      *
      * @return void
      */
@@ -81,7 +81,7 @@ class Conf
     }
 
     /**
-     * @param callable $callback
+     * @param callable $callback (object $kafka, int $err, array $partitions);
      *
      * @return void
      */
@@ -90,11 +90,21 @@ class Conf
     }
 
     /**
-     * @param callable $callback
+     * @param callable $callback (object $kafka, int $level, string $facility, string $message);
      *
      * @return void
      */
     public function setLogCb(callable $callback)
     {
+    }
+
+    /**
+     * @param callable $callback (RdKafka\Producer $producer)
+     *
+     * @return void
+     */
+    public function setOauthbearerTokenRefreshCb(callable $callback)
+    {
+
     }
 }
