@@ -7,7 +7,7 @@ class KafkaErrorException extends \Exception
     /**
      * @param string $message
      * @param int $code
-     * @param string $errorString
+     * @param string $error_string
      * @param boolean $isFatal
      * @param boolean $isRetriable
      * @param boolean $transactionRequiresAbort
@@ -15,7 +15,7 @@ class KafkaErrorException extends \Exception
     public function __construct(
         string $message,
         int $code,
-        string $errorString,
+        string $error_string,
         bool $isFatal,
         bool $isRetriable,
         bool $transactionRequiresAbort
