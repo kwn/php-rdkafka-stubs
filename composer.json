@@ -8,6 +8,11 @@
             "email": "k.wnuk@ascetic.pl"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Kafka\\": "src/"
+        }
+    },
     "require": {
         "ext-rdkafka": ">=6.0"
     },
